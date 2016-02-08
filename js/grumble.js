@@ -15,19 +15,19 @@ var Sound = function(fileId) {
 };
 
 Sound.prototype.play = function() {
+  console.log(this.fileId);
   this.element.play();
 }
 
 
 $(document).ready(function() {
-  var sounds = [1/*, 2, 3, 4, 5*/].map(function(id) {
+  var sounds = [1, 2, 3, 4].map(function(id) {
     return new Sound(id);
   });
 
   $('body').on('click', function(e) {
     if (isPlaying === false) {
-      //sounds[Math.floor(Math.random() * 5)].play();
-      sounds[Math.floor(Math.random())].play();
+      sounds[Math.floor(Math.random() * sounds.length)].play();
 
       $('#binky-meem').addClass('grumbling');
 
