@@ -1,4 +1,20 @@
 body {
   background-color: #000;
   color: #fff;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+div#binky-meem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-position: fixed;
+  background-image: url('https://placekitten.com/g/2000/2000');
 }
