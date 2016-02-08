@@ -15,12 +15,13 @@ var Sound = function(fileId) {
 };
 
 Sound.prototype.play = function() {
-  console.log(this.fileId);
   this.element.play();
 }
 
 
 $(document).ready(function() {
+  FastClick.attach(document.body);
+
   var sounds = [1, 2, 3, 4].map(function(id) {
     return new Sound(id);
   });
