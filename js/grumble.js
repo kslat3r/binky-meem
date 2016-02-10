@@ -1,5 +1,5 @@
 var isPlaying = false;
-
+var prevSound = null;
 
 var Sound = function(fileId) {
   this.fileId = fileId;
@@ -22,13 +22,24 @@ Sound.prototype.play = function() {
 $(document).ready(function() {
   FastClick.attach(document.body);
 
-  var sounds = [1, 2, 3, 4].map(function(id) {
+  var sounds = [1, 2, 3, 4, 5, 6].map(function(id) {
     return new Sound(id);
   });
 
+  var getSound = function(prevSound) {
+    var nextSound = sounds[Math.floor(Math.random() * sounds.length)];
+
+    if (prevSound !== null && nextSound.fileId === prevSound.fileId) {
+      return getSound(prevSound);
+    }
+
+    return nextSound;
+  };
+
   $('body').on('click', function(e) {
     if (isPlaying === false) {
-      sounds[Math.floor(Math.random() * sounds.length)].play();
+      prevSound = getSound(prevSound);
+      prevSound.play();
 
       $('#binky-meem').addClass('grumbling');
 

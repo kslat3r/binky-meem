@@ -14,7 +14,10 @@ div#binky-meem {
   bottom: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
-  background-position: fixed;
-  background-image: url('https://placekitten.com/g/2000/2000');
+  background-position: center center;
+  background-image: url('/images/meem.png');
+}
+
+div#binky-meem.grumbling {
+  background-image: url('/images/meem-grumble.png');
 }
