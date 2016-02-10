@@ -22,6 +22,9 @@ Sound.prototype.play = function() {
 $(document).ready(function() {
   FastClick.attach(document.body);
 
+  var preload = document.createElement('img');
+  preload.src = '/images/meem-grumbling.png';
+
   var sounds = [1, 2, 3, 4, 5, 6].map(function(id) {
     return new Sound(id);
   });
